@@ -1,0 +1,122 @@
+% !TeX document-id = {0860a59e-3926-43bd-9926-0464d3bf14f1}
+% !TEX program = LuaLaTeX --shell-escape
+\documentclass[10pt,a6paper]{article}
+\pagestyle{empty}
+
+% 1. MARGÓK BEÁLLÍTÁSA
+\usepackage{geometry}
+\geometry{
+	top=1cm,
+	bottom=1cm,
+	left=1cm,
+	right=1cm,
+}
+
+% 2. FONTOS: A babel betöltése ELŐBB
+\usepackage[latin]{babel} 
+
+% betűtípus
+\usepackage{libertinus-otf}
+
+% 3. Gregoriotex CSAK EZUTÁN
+\usepackage{gregoriotex} 
+
+% Csomag a hasábokhoz (Ez hiányzott!)
+\usepackage{multicol}
+
+% Címsorok számozásának kikapcsolása
+\setcounter{secnumdepth}{-1}
+
+% --- GREGORIO BEÁLLÍTÁSOK ---
+% Alapméret (ha 17-es kell, itt állítsd be)
+\grechangestaffsize{15}
+
+% Iniciálé
+\grechangedim{beforeinitialshift}{1.5mm}{scalable}
+\grechangedim{afterinitialshift}{1.5mm}{scalable}
+\grechangestyle{initial}{\fontsize{36}{36}\selectfont}
+
+% Kottaszín és feliratok
+\gresetlinecolor{black}
+\gresetheadercapture{commentary}{grecommentary}{string}
+\grechangestyle{annotation}{\small\bfseries}
+
+% Térközök
+\grechangedim{baselineskip}{42pt}{scalable}
+\grechangedim{spaceabovelines}{5mm}{scalable} % Frissítve 5mm-re a korábbi kódod alapján
+\grechangedim{spacebeneathtext}{1.5mm}{scalable} 
+\grechangedim{interglyphspace}{0.9mm}{scalable}
+
+%Sorkizárt
+\gresetlastline{justified}
+
+%Modositojelek dominikanus kezelese
+\gresetalterationeffect{line}
+
+% --- CÍMSOROK BEÁLLÍTÁSA (titlesec javítva) ---
+\usepackage[compact]{titlesec}
+
+% Térközök
+\titlespacing*{\section}{0pt}{*0}{*1}
+\titlespacing*{\subsection}{0pt}{*0}{*1}
+\titlespacing*{\subsubsection}{0pt}{10pt}{*0}
+
+% Formázás (KOMA-Script parancs kiváltása a section-nél)
+\titleformat{\section}{\normalfont\LARGE\scshape\center}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\Large\center}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection}{1em}{}
+
+\begin{document}
+	
+	% Helyesebb cím formázás az article osztályban
+	\section*{Toni Psalmorum et Canticorum}
+	
+	Az 1965-ös dominikánus \emph{Regulae Cantus} alapján.
+
+	\subsubsection{Tonus I} \gregorioscore[a]{dallam/tonus1_alap}
+	\begin{multicols}{3}
+		\subsubsection{1D} \gregorioscore[a]{dallam/1D_term}
+		\subsubsection{1g} \gregorioscore[a]{dallam/1g_term}
+		\subsubsection{1a} \gregorioscore[a]{dallam/1a_term}
+	\end{multicols}
+	
+	\subsubsection{Tonus II}
+	\gregorioscore[a]{dallam/tonus2}
+	
+	\subsubsection{Tonus III} \gregorioscore[a]{dallam/tonus3_alap}
+		\begin{multicols}{2}
+		\subsubsection{3a} \gregorioscore[a]{dallam/3a_term}
+		\subsubsection{3a2} \gregorioscore[a]{dallam/3a2_term}
+	\end{multicols}
+	
+	\subsubsection{Tonus IV} \gregorioscore[a]{dallam/tonus4_alap}
+	\begin{multicols}{2}
+		\subsubsection{4E} \gregorioscore[a]{dallam/4E_term}
+		\subsubsection{4A} \gregorioscore[a]{dallam/4A_term}
+	\end{multicols}
+	
+	\subsubsection{Tonus V}
+	\gregorioscore[a]{dallam/tonus5}
+	
+	\subsubsection{Tonus VI}
+	\gregorioscore[a]{dallam/tonus6}
+	
+	\subsubsection{Tonus VII} \gregorioscore[a]{dallam/tonus7_alap}
+	\begin{multicols}{2}
+		\subsubsection{7a} \gregorioscore[a]{dallam/7a_term}
+		\subsubsection{7d} \gregorioscore[a]{dallam/7d_term}
+	\end{multicols}
+	
+	% Szintaktikai hiba javítva (hiányzó zárójel)
+	\subsubsection{Tonus VIII} \gregorioscore[a]{dallam/tonus8_alap}
+	\begin{multicols}{2}
+		\subsubsection{8G} \gregorioscore[a]{dallam/8G_term}
+		\subsubsection{8c} \gregorioscore[a]{dallam/8c_term}
+	\end{multicols}
+	
+	\subsubsection{Tonus Peregrinus}
+	\gregorioscore[a]{dallam/tonus_peregrinus}
+	
+	\subsubsection{Tonus in directum}
+	\gregorioscore[a]{dallam/tonus_in_directum}
+\end{document}
