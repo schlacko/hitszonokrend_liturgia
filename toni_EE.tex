@@ -1,0 +1,111 @@
+% !TeX document-id = {0860a59e-3926-43bd-9926-0464d3bf14f1}
+% !TEX program = LuaLaTeX --shell-escape
+\documentclass[10pt,a6paper]{article}
+\pagestyle{empty}
+
+% 1. MARGÓK BEÁLLÍTÁSA
+\usepackage{geometry}
+\geometry{
+	top=1cm,
+	bottom=1cm,
+	left=1.5cm,
+	right=1.5cm,
+}
+
+% 2. FONTOS: A babel betöltése ELŐBB
+\usepackage[latin]{babel} 
+
+% betűtípus
+\usepackage{libertinus-otf}
+
+% 3. Gregoriotex CSAK EZUTÁN
+\usepackage{gregoriotex} 
+
+% Csomag a hasábokhoz (Ez hiányzott!)
+\usepackage{multicol}
+
+% Címsorok számozásának kikapcsolása
+\setcounter{secnumdepth}{-1}
+
+% --- GREGORIO BEÁLLÍTÁSOK ---
+% Alapméret (ha 17-es kell, itt állítsd be)
+\grechangestaffsize{15}
+
+% Iniciálé
+\grechangedim{beforeinitialshift}{1.5mm}{scalable}
+\grechangedim{afterinitialshift}{1.5mm}{scalable}
+\grechangestyle{initial}{\fontsize{36}{36}\selectfont}
+
+% Kottaszín és feliratok
+\gresetlinecolor{black}
+\gresetheadercapture{commentary}{grecommentary}{string}
+\grechangestyle{annotation}{\small\bfseries}
+
+% Térközök
+\grechangedim{baselineskip}{42pt}{scalable}
+\grechangedim{spaceabovelines}{5mm}{scalable} % Frissítve 5mm-re a korábbi kódod alapján
+\grechangedim{spacebeneathtext}{1.5mm}{scalable} 
+\grechangedim{interglyphspace}{0.9mm}{scalable}
+
+%Sorkizárt
+\gresetlastline{justified}
+
+%Modositojelek dominikanus kezelese
+\gresetalterationeffect{line}
+
+% --- CÍMSOROK BEÁLLÍTÁSA (titlesec javítva) ---
+\usepackage[compact]{titlesec}
+
+% Térközök
+\titlespacing*{\section}{0pt}{*0}{*1}
+\titlespacing*{\subsection}{0pt}{*0}{*1}
+\titlespacing*{\subsubsection}{0pt}{10pt}{*0}
+
+% Formázás (KOMA-Script parancs kiváltása a section-nél)
+\titleformat{\section}{\normalfont\LARGE\scshape\center}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\Large\center}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection}{1em}{}
+
+\begin{document}
+	
+	% Helyesebb cím formázás az article osztályban
+	\section*{Zsoltártónusok}
+	
+	Az \emph{Éneklő Egyház} és a \emph{Graduale Hungaricum} magyar
+	sorozata alapján.
+	
+	\subsubsection{1. zsoltártónus} \gregorioscore[a]{dallam/tonus1_alap}
+	\begin{multicols}{2}
+		\subsubsection{1 re} \gregorioscore[a]{dallam/1D_term}
+		\subsubsection{1 lá} \gregorioscore[a]{dallam/1g_term}
+	\end{multicols}
+	
+	\subsubsection{2. zsoltártónus}
+	\gregorioscore[a]{dallam/tonus2}
+	
+	\subsubsection{3. zsoltártónus} \gregorioscore[a]{dallam/tonus3}
+	
+	\subsubsection{4. zsoltártónus} \gregorioscore[a]{dallam/tonus4}
+
+	\subsubsection{5. zsoltártónus}
+	\gregorioscore[a]{dallam/tonus5}
+	
+	\subsubsection{6. zsoltártónus}
+	\gregorioscore[a]{dallam/tonus6}
+	
+	\subsubsection{7. zsoltártónus} \gregorioscore[a]{dallam/tonus7_alap}
+	\begin{multicols}{2}
+		\subsubsection{7 lá} \gregorioscore[a]{dallam/7a_term}
+		\subsubsection{7 dó} \gregorioscore[a]{dallam/7c_term}
+	\end{multicols}
+	
+	% Szintaktikai hiba javítva (hiányzó zárójel)
+	\subsubsection{8. zsoltártónus} \gregorioscore[a]{dallam/tonus8_alap}
+	\begin{multicols}{2}
+		\subsubsection{8 szó} \gregorioscore[a]{dallam/8G_term}
+		\subsubsection{8 dó} \gregorioscore[a]{dallam/8c_term}
+	\end{multicols}
+	
+	\subsubsection{tonus peregrinus}
+	\gregorioscore[a]{dallam/tonus_peregrinus}
+\end{document}
