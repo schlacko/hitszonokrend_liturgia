@@ -12,11 +12,14 @@
 	right=1cm,
 }
 
-% 2. FONTOS: A babel betöltése ELŐBB
-\usepackage[latin]{babel} 
-
 % betűtípus
-\usepackage{libertinus-otf}
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O} % Linux Libertine betűtípus használata
+
+% Nyelv beállítása (latin)
+
+\usepackage{polyglossia}
+\setdefaultlanguage{latin} % Alapértelmezett nyelv latin
 
 % 3. Gregoriotex CSAK EZUTÁN
 \usepackage{gregoriotex} 
@@ -73,50 +76,50 @@
 	
 	Az 1965-ös dominikánus \emph{Regulae Cantus} alapján.
 
-	\subsubsection{Tonus I} \gregorioscore[a]{dallam/tonus1_alap}
+	\subsubsection{Tonus I} \gregorioscore[a]{scores/tonus/op_tonus1_alap}
 	\begin{multicols}{3}
-		\subsubsection{1D} \gregorioscore[a]{dallam/1D_term}
-		\subsubsection{1g} \gregorioscore[a]{dallam/1g_term}
-		\subsubsection{1a} \gregorioscore[a]{dallam/1a_term}
+		\subsubsection{1D} \gregorioscore[a]{scores/tonus/op_1D_term}
+		\subsubsection{1g} \gregorioscore[a]{scores/tonus/op_1g_term}
+		\subsubsection{1a} \gregorioscore[a]{scores/tonus/op_1a_term}
 	\end{multicols}
 	
 	\subsubsection{Tonus II}
-	\gregorioscore[a]{dallam/tonus2}
+	\gregorioscore[a]{scores/tonus/op_tonus2}
 	
-	\subsubsection{Tonus III} \gregorioscore[a]{dallam/tonus3_alap}
+	\subsubsection{Tonus III} \gregorioscore[a]{scores/tonus/op_tonus3_alap}
 		\begin{multicols}{2}
-		\subsubsection{3a} \gregorioscore[a]{dallam/3a_term}
-		\subsubsection{3a2} \gregorioscore[a]{dallam/3a2_term}
+		\subsubsection{3a} \gregorioscore[a]{scores/tonus/op_3a_term}
+		\subsubsection{3a2} \gregorioscore[a]{scores/tonus/op_3a2_term}
 	\end{multicols}
 	
-	\subsubsection{Tonus IV} \gregorioscore[a]{dallam/tonus4_alap}
+	\subsubsection{Tonus IV} \gregorioscore[a]{scores/tonus/op_tonus4_alap}
 	\begin{multicols}{2}
-		\subsubsection{4E} \gregorioscore[a]{dallam/4E_term}
-		\subsubsection{4A} \gregorioscore[a]{dallam/4A_term}
+		\subsubsection{4E} \gregorioscore[a]{scores/tonus/op_4E_term}
+		\subsubsection{4A} \gregorioscore[a]{scores/tonus/op_4A_term}
 	\end{multicols}
 	
 	\subsubsection{Tonus V}
-	\gregorioscore[a]{dallam/tonus5}
+	\gregorioscore[a]{scores/tonus/op_tonus5}
 	
 	\subsubsection{Tonus VI}
-	\gregorioscore[a]{dallam/tonus6}
+	\gregorioscore[a]{scores/tonus/op_tonus6}
 	
-	\subsubsection{Tonus VII} \gregorioscore[a]{dallam/tonus7_alap}
+	\subsubsection{Tonus VII} \gregorioscore[a]{scores/tonus/op_tonus7_alap}
 	\begin{multicols}{2}
-		\subsubsection{7a} \gregorioscore[a]{dallam/7a_term}
-		\subsubsection{7d} \gregorioscore[a]{dallam/7d_term}
+		\subsubsection{7a} \gregorioscore[a]{scores/tonus/op_7a_term}
+		\subsubsection{7d} \gregorioscore[a]{scores/tonus/op_7d_term}
 	\end{multicols}
 	
 	% Szintaktikai hiba javítva (hiányzó zárójel)
-	\subsubsection{Tonus VIII} \gregorioscore[a]{dallam/tonus8_alap}
+	\subsubsection{Tonus VIII} \gregorioscore[a]{scores/tonus/op_tonus8_alap}
 	\begin{multicols}{2}
-		\subsubsection{8G} \gregorioscore[a]{dallam/8G_term}
-		\subsubsection{8c} \gregorioscore[a]{dallam/8c_term}
+		\subsubsection{8G} \gregorioscore[a]{scores/tonus/op_8G_term}
+		\subsubsection{8c} \gregorioscore[a]{scores/tonus/op_8c_term}
 	\end{multicols}
 	
 	\subsubsection{Tonus Peregrinus}
-	\gregorioscore[a]{dallam/tonus_peregrinus}
+	\gregorioscore[a]{scores/tonus/op_tonus_peregrinus}
 	
 	\subsubsection{Tonus in directum}
-	\gregorioscore[a]{dallam/tonus_in_directum}
+	\gregorioscore[a]{scores/tonus/op_tonus_in_directum}
 \end{document}

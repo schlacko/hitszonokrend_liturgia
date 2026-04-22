@@ -12,11 +12,14 @@
 	right=1.5cm,
 }
 
-% 2. FONTOS: A babel betöltése ELŐBB
-\usepackage[latin]{babel} 
-
 % betűtípus
-\usepackage{libertinus-otf}
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O} % Linux Libertine betűtípus használata
+
+% Nyelv beállítása (latin)
+
+\usepackage{polyglossia}
+\setdefaultlanguage{latin} % Alapértelmezett nyelv latin
 
 % 3. Gregoriotex CSAK EZUTÁN
 \usepackage{gregoriotex} 
@@ -74,38 +77,38 @@
 	Az \emph{Éneklő Egyház} és a \emph{Graduale Hungaricum} magyar
 	sorozata alapján.
 	
-	\subsubsection{1. zsoltártónus} \gregorioscore[a]{dallam/tonus1_alap}
+	\subsubsection{1. zsoltártónus} \gregorioscore[a]{scores/tonus/ee_tonus1_alap}
 	\begin{multicols}{2}
-		\subsubsection{1 re} \gregorioscore[a]{dallam/1D_term}
-		\subsubsection{1 lá} \gregorioscore[a]{dallam/1g_term}
+		\subsubsection{1 re} \gregorioscore[a]{scores/tonus/ee_1D_term}
+		\subsubsection{1 lá} \gregorioscore[a]{scores/tonus/ee_1g_term}
 	\end{multicols}
 	
 	\subsubsection{2. zsoltártónus}
-	\gregorioscore[a]{dallam/tonus2}
+	\gregorioscore[a]{scores/tonus/ee_tonus2}
 	
-	\subsubsection{3. zsoltártónus} \gregorioscore[a]{dallam/tonus3}
+	\subsubsection{3. zsoltártónus} \gregorioscore[a]{scores/tonus/ee_tonus3}
 	
-	\subsubsection{4. zsoltártónus} \gregorioscore[a]{dallam/tonus4}
+	\subsubsection{4. zsoltártónus} \gregorioscore[a]{scores/tonus/ee_tonus4}
 
 	\subsubsection{5. zsoltártónus}
-	\gregorioscore[a]{dallam/tonus5}
+	\gregorioscore[a]{scores/tonus/ee_tonus5}
 	
 	\subsubsection{6. zsoltártónus}
-	\gregorioscore[a]{dallam/tonus6}
+	\gregorioscore[a]{scores/tonus/ee_tonus6}
 	
-	\subsubsection{7. zsoltártónus} \gregorioscore[a]{dallam/tonus7_alap}
+	\subsubsection{7. zsoltártónus} \gregorioscore[a]{scores/tonus/ee_tonus7_alap}
 	\begin{multicols}{2}
-		\subsubsection{7 lá} \gregorioscore[a]{dallam/7a_term}
-		\subsubsection{7 dó} \gregorioscore[a]{dallam/7c_term}
+		\subsubsection{7 lá} \gregorioscore[a]{scores/tonus/ee_7a_term}
+		\subsubsection{7 dó} \gregorioscore[a]{scores/tonus/ee_7c_term}
 	\end{multicols}
 	
 	% Szintaktikai hiba javítva (hiányzó zárójel)
-	\subsubsection{8. zsoltártónus} \gregorioscore[a]{dallam/tonus8_alap}
+	\subsubsection{8. zsoltártónus} \gregorioscore[a]{scores/tonus/ee_tonus8_alap}
 	\begin{multicols}{2}
-		\subsubsection{8 szó} \gregorioscore[a]{dallam/8G_term}
-		\subsubsection{8 dó} \gregorioscore[a]{dallam/8c_term}
+		\subsubsection{8 szó} \gregorioscore[a]{scores/tonus/ee_8G_term}
+		\subsubsection{8 dó} \gregorioscore[a]{scores/tonus/ee_8c_term}
 	\end{multicols}
 	
 	\subsubsection{tonus peregrinus}
-	\gregorioscore[a]{dallam/tonus_peregrinus}
+	\gregorioscore[a]{scores/tonus/ee_tonus_peregrinus}
 \end{document}

@@ -11,11 +11,16 @@
   right=1.5cm,
 }
 
-% 2. FONTOS: A babel betöltése ELŐBB
-\usepackage[latin, magyar]{babel} 
-
 % betűtípus
-\usepackage{libertinus-otf}
+\usepackage{fontspec}
+
+\setmainfont{Linux Libertine O} % Linux Libertine betűtípus használata
+
+% Nyelv
+
+\usepackage{polyglossia}
+\setdefaultlanguage{latin} % Alapértelmezett nyelv latin
+\setotherlanguage{magyar} % Második nyelv magyar
 
 % 3. Gregoriotex CSAK EZUTÁN
 \usepackage{gregoriotex} 
@@ -23,11 +28,11 @@
 % Opcionális: Szebb sorkizárás (segít eltüntetni a nagy lyukakat a szövegben)
 \usepackage{microtype}
 
-\gredefsizedsymbol{VBarGoth}{greextra}{VWithBarGoth}
-\gredefsizedsymbol{RBarGoth}{greextra}{RWithBarGoth}
+%\gredefsizedsymbol{VBarGoth}{greextra}{VWithBarGoth}
+%\gredefsizedsymbol{RBarGoth}{greextra}{RWithBarGoth}
 
-\newcommand{\Vslash}{\VBarGoth{}.}
-\newcommand{\Rslash}{\RBarGoth{}.} 
+%\newcommand{\Vslash}{\VBarGoth{}.}
+%\newcommand{\Rslash}{\RBarGoth{}.} 
 
 \setkomafont{section}{\normalfont\centering\LARGE\scshape} 
 \setcounter{secnumdepth}{-\maxdimen} 
@@ -66,44 +71,46 @@
 
 \section{Ad Processionem In Fine Vesperarum}
 
-\gregorioscore[a]{an--salve_regina--dominican}
+\gregorioscore[a]{scores/antiphona/an--salve_regina--dominican}
 \vspace{1em}
 \noindent
-\selectlanguage{latin}
-\Vslash{} Dignare me laudare te virgo sacráta - (T.P. Alleluia)\\
-\textbf{\Rslash{} Da mihi virtútem contra hostes tuos - (T.P. Alleluia)}
+\Vbar. Dignare me laudare te virgo sacráta - (T.P. Alleluia)\\
+\textbf{\Rbar. Da mihi virtútem contra hostes tuos - (T.P. Alleluia)}
 \vspace{1em}
 
 \textbf{Orémus}
 
 Concéde nos fámulos tuos, quǽsumus, Dómine Deus, perpétua mentis et córporis salúte gaudére: et gloriósa beatæ Maríæ semper Vírginis intercessióne a præsénti liberári tristía et ætérna pérfrui lætítia: Per Christum Dóminum nostrum \\
-\textbf{\Rslash{} Amen}
+\textbf{\Rbar. Amen}
 \vspace{1em}
 
-\gregorioscore[a]{an--o_lumen--dominican}
+\gregorioscore[a]{scores/antiphona/an--o_lumen--dominican}
 \vspace{1em}
 \noindent
-\Vslash{} Ora pro nobis, beáte Pater Dominíce - (T.P. Alleluia)\\
-\textbf{\Rslash{} Ut digni efficiámur promissiónibus Christi -}\\
+\Vbar. Ora pro nobis, beáte Pater Dominíce - (T.P. Alleluia)\\
+\textbf{\Rbar. Ut digni efficiámur promissiónibus Christi -}\\
 {\raggedright (T.P. Alleluia.)\par}
 
 \newpage
 \textbf{Orémus}
 
 Concéde quǽsumus omnípotens Deus: ut, qui peccatórum nostrórum póndere prémimur - beáti Domínici Confessóris tui, Patris nostri, patrocínio sublevémur: Per Christum Dóminum nostrum \\
-\textbf{\Rslash{} Amen}
+\textbf{\Rbar. Amen}
 
 \vspace{1em}
 \noindent
-\Vslash{} Fidelium animae per nostrum. Dei requiescant in pace.\\
-\textbf{\Rslash{} Amen}
+\Vbar. Fidelium animae per nostrum. Dei requiescant in pace.\\
+\textbf{\Rbar. Amen}
 
 \section{Ima a hivatásokért}
 
-\selectlanguage{magyar}
-% A sloppy parancs engedékenyebb a szóközökkel, ha nagyon nem fér ki a sor:
-Urunk, Jézus Krisztus, Te egykor meghívtad Egyházadba Szent Domonkos családját, hogy hirdesse az evangéliumot.\\
-Kérünk, küldj ugyanúgy ma is apostolokat aratásodba. Adj nekik bátorságot, bölcsességet és kegyelmet, hogy az emberek előtt méltóképpen tegyenek tanúságot halálodról, feltámadásodról és dicsőséges eljöveteledről.\\
-Engedd, hogy legszentebb Édesanyádnak, Rendünk pártfogójának közbenjárására legyünk a hit védőivé, a közömbösséget és a bűn sötétségét szétoszlató fénnyé: te, aki mindig velünk vagy. Amen  
+\begin{magyar}
+{\large
+\hyphenpenalty=10000
+\indent Urunk, Jézus Krisztus, Te egykor meghívtad Egyházadba Szent Domonkos családját, hogy hirdesse az evangéliumot.\\
+\indent Kérünk, küldj ugyanúgy ma is apostolokat aratásodba. Adj nekik bátorságot, bölcsességet és kegyelmet, hogy az emberek előtt méltóképpen tegyenek tanúságot halálodról, feltámadásodról és dicsőséges eljöveteledről.\\
+\indent Engedd, hogy legszentebb Édesanyádnak, Rendünk pártfogójának közbenjárására legyünk a hit védőivé, a közömbösséget és a bűn sötétségét szétoszlató fénnyé: te, aki mindig velünk vagy. Amen  
+}
+\end{magyar}
 
 \end{document}
