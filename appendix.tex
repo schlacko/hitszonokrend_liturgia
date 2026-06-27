@@ -1,0 +1,198 @@
+% !TEX program = LuaLaTeX --shell-escape
+\documentclass[10pt,a6paper]{article}
+\pagestyle{empty}
+
+% 1. MARGÓK BEÁLLÍTÁSA
+\usepackage{geometry}
+\geometry{
+	top=1cm,
+	bottom=1cm,
+	left=1.5cm,
+	right=1.5cm,
+}
+
+% Címsorok számozásának kikapcsolása
+\setcounter{secnumdepth}{-1}
+
+% betűtípus
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O} % Linux Libertine betűtípus használata
+\newfontfamily\litfont{liturgy.ttf}
+
+% Bekezdések
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em}
+
+% Nyelv beállítása (latin)
+
+\usepackage{polyglossia}
+\setdefaultlanguage{latin} % Alapértelmezett nyelv latin
+\setotherlanguage{hungarian} % Másodlagos nyelv magyar
+
+% csomagok
+
+\usepackage{microtype} %mikrotipografia
+\usepackage{xcolor} %színek
+\usepackage{lettrine} %inicialek
+
+%==============================================================================
+% Stilusok
+%==============================================================================
+
+% Focim
+\newcommand{\titulus}[1]{%
+  \par
+  \vspace{1em}
+  \begin{center}
+    \Large\bfseries #1
+  \end{center}
+  \vspace{0.8em}
+}
+
+% Alcim
+\newcommand{\pars}[1]{%
+  \par
+  \vspace{0.8em}
+  \begin{center}
+    \large\bfseries #1
+  \end{center}
+  \vspace{0.5em}
+}
+
+% Kisebb cim
+\newcommand{\subpars}[1]{%
+  \par
+  \vspace{0.6em}
+  {\bfseries #1\par}
+  \vspace{0.3em}
+}
+
+% Rubrika
+\newcommand{\rubrica}[1]{%
+  \par
+  {\color{red}\footnotesize #1\par}
+  \smallskip
+}
+
+\newcommand{\V}{\textcolor{red}{\textbf{\litfont V.}}\ }
+\newcommand{\R}{\textcolor{red}{\textbf{\litfont R.}}\ }
+
+% Antifona
+\newcommand{\antiphona}[1]{%
+  \par
+  \medskip
+  \textbf{Ant.} #1\par
+  \smallskip
+}
+
+% Oratio
+\newcommand{\oratio}[1]{%
+  \par
+  \medskip
+  {\bfseries Oratio}\par
+  #1
+  \medskip
+}
+
+% Zsoltar cime
+\newcommand{\psalmus}[2]{%
+  \par
+  \vspace{0.8em}
+  \begin{center}
+    \bfseries Psalmus #1\\
+    \itshape #2
+  \end{center}
+  \vspace{0.4em}
+}
+
+% Himnusz cime
+\newcommand{\hymnus}[1]{%
+  \par
+  \vspace{0.8em}
+  \begin{center}
+    \bfseries Hymnus\\
+    \itshape #1
+  \end{center}
+  \vspace{0.4em}
+}
+
+\newcommand{\forditas}[1]{%
+  {\small\itshape (#1)}%
+}
+
+\newcommand{\initial}[2]{%
+  \lettrine[
+    lines=2,
+    lhang=.1,
+    findent=2pt,
+    nindent=0pt
+  ]{\color{red}\normalfont #1}{\normalfont #2}
+}
+
+
+\begin{document}
+
+  \titulus{Ante Divinum Officum}
+  
+  \rubrica{
+    flexis genibus
+  }
+
+  \initial{A}{peri} Dómine, os meum ad benedicéndum nomen sanctum tuum: 
+  munda quoque cor meum ab ómnibus vanis, pervérsis et aliénis cogitatiónibus; 
+  intelléctum illúmina, afféctum inflámma, ut digne, atténte ac devóte hoc Offícium recitáre váleam, 
+  et exaudíri mérear ante conspéctum divínæ Maiestátis tuæ. Per Christum Dóminum nostrum. \R Amen
+  \smallskip
+
+  \forditas{
+    Nyisd meg Uram, ajkamat neved dicséretére; tisztítsd meg szívemet minden hiábavaló 
+    és vétkes gondolattól; világosítsd meg értelmemet, gyújtsd lángra szívemet, 
+    hogy ezt a zsolozsmát méltón, figyelmesen, áhítattal végezzem, 
+    és meghallgatásra méltó legyek isteni fölséged színe előtt. Krisztus a mi Urunk által.
+  }
+  \smallskip
+
+  \initial{D}{ómine}, in unióne illíus divínæ intentiónis, qua ipse in terris laudes Deo persolvísti, 
+  has tibi horas ({\color{red} \footnotesize vel} hanc tibi horam) persólvo.
+  \smallskip
+
+  \forditas{
+    Uram, egyesülve azzal az isteni szándékkal, mellyel te magad teljesítetted 
+    e földön élvén az Atyaisten dicséretét, akarom én is most ezt a zsolozsmát elvégezni.
+  }
+
+  \newpage
+  
+  \titulus{Post Divinum Officum}
+  
+  \rubrica{
+    Dicitur autem flexis semper genibus in privata etiam recitatione, 
+    præter quam ab iis, qui ob certam infirmitatem vel gravioris impedimenti causam nequeant genuflectere.
+  }
+
+  \initial{S}{acrosánctæ} et indivíduæ Trinitáti, crucifíxi Dómini nostri Iesu Christi humanitáti, 
+  beatíssimæ et gloriosíssimæ sempérque Vírginis Maríæ fœcúndæ integritáti, 
+  et ómnium Sanctórum universitáti sit sempitérna laus, honor, virtus et glória ab omni creatúra, 
+  nobísque remíssio ómnium peccatórum, per infiníta sǽcula sæculórum. \R Amen
+  \smallskip
+
+  \forditas{
+    A legszentebb és oszthatatlan Háromságnak, a mi megfeszített Urunk, Jézus Krisztus emberségének, 
+    a Boldogságos és dicsőséges, mindenkor Szűz Mária termékeny érintetlenségének 
+    és minden szentek egyességének legyen örök dicséret, tisztesség, erő és dicsőség minden 
+    teremtménytől, nekünk pedig minden bűneink bocsánata örökkön örökké!
+  }
+  \smallskip
+
+  \V Beáta víscera Maríæ Vírginis, quæ portavérunt ætérni Patris Fílium. \\
+  \R Et beáta úbera, quæ lactavérunt Christum Dóminum. \\
+  \smallskip
+
+  \forditas{
+    Boldog Szűz Mária méhe, mely az örök Atya Fiát hordozta. - 
+    És boldogok az emlők, melyek Krisztust, az Urat szoptatták.
+  }
+  
+  {\color{red} \footnotesize Et dicitur secreto} Pater noster. {\color{red} \footnotesize {et} Ave Maria.
+
+\end{document}
